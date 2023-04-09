@@ -37,3 +37,11 @@ const animateChar = spanChar => {
         }, 50);
     });
 }
+
+const submit = e => {
+    e.preventDefault();
+    resultado.innerHTML = '';
+    shifMessage()
+}
+
+cifrador.onsubmit = submit;
