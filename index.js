@@ -23,3 +23,17 @@ const printChar = (currentLetterIndex, wordArray) => {
             printChar(currentLetterIndex + 1, wordArray);
         });
 }
+
+const animateChar = spanChar => {
+    let cambiosDeLetra = 0;
+    return new Promise(resolve => {
+        const intervalo = setInterval(() => {
+            spanChar.innerHTML = alfabeto[Math.floor(Math.random() * alfabeto.length)];
+            cambiosDeLetra++;
+            if(cambiosDeLetra === 3) {
+                clearInterval(intervalo);
+                resolve();
+            }
+        }, 50);
+    });
+}
